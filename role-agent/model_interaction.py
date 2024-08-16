@@ -8,12 +8,12 @@ class ModelInteraction:
             raise ValueError("ZHIPUAI_API_KEY environment variable is not set")
         self.client = ZhipuAI(api_key=api_key)
 
-    def generate_response(self, messages, model="glm-4", max_tokens=2000):
+    def generate_response(self, messages, model="glm-4", max_tokens=2000, temperature=0.7):
         try:
             response = self.client.chat.completions.create(
                 model=model,
                 messages=messages,
-                temperature=0.9,
+                temperature=temperature,
                 stream=False,
                 max_tokens=max_tokens,
             )

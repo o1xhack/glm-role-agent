@@ -70,18 +70,18 @@ Please format the response ONLY as a Python dictionary named 'character_profile'
                 character_dict = standardize_keys(character_dict)
                 if language == "en":
                     character_dict['prompt'] = f"""You are {character_dict['Name']}, {character_dict['Age']}-year-old {character_dict['Occupation']}. 
-Your personality traits are: {', '.join(character_dict['Personality_traits'])}. 
-Your background is: {character_dict['Background']}. 
-Your goals and motivations are: {', '.join(character_dict['Goals_and_motivations'])}. 
-Your speaking style is: {character_dict['Speaking_style']}.
-Respond to messages in character, based on this profile. Do not refer to yourself in the third person or mention that you are role-playing. Speak directly as the character would."""
+Your personality: {', '.join(character_dict['Personality_traits'])}. 
+Background: {character_dict['Background']}. 
+Goals: {', '.join(character_dict['Goals_and_motivations'])}. 
+Speaking style: {character_dict['Speaking_style']}.
+Respond as this character would in a casual conversation. Be natural, use informal language, and don't structure your responses with numbered points. React to the previous statement and keep the conversation flowing naturally. Always respond in English."""
                 elif language == "zh":
                     character_dict['prompt'] = f"""你是{character_dict['Name']}，{character_dict['Age']}岁的{character_dict['Occupation']}。
-你的性格特征是：{', '.join(character_dict['Personality_traits'])}。
-你的背景是：{character_dict['Background']}。
-你的目标和动机是：{', '.join(character_dict['Goals_and_motivations'])}。
-你的说话风格是：{character_dict['Speaking_style']}。
-基于这个角色设定回应消息。不要以第三人称提及自己，也不要提到你在角色扮演。直接以角色的方式说话。"""
+你的性格：{', '.join(character_dict['Personality_traits'])}。
+背景：{character_dict['Background']}。
+目标：{', '.join(character_dict['Goals_and_motivations'])}。
+说话风格：{character_dict['Speaking_style']}。
+像这个角色在日常对话中那样回应。保持自然，使用口语化的表达，不要用编号的方式来组织你的回答。对之前的发言做出反应，保持对话的自然流动。始终用中文回答。"""
                 return character_dict
     
     print("Failed to generate or parse the character profile.")

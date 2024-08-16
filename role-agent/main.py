@@ -45,10 +45,17 @@ def main():
             break
 
         print("\nGenerating dialogue...")
-        topic, dialogue = dialogue_gen.generate_dialogue(user_input, num_turns=3)
+        topic = user_input
+        dialogue = []
+        
+        for _ in range(6):  # 3 turns for each character
+            response = dialogue_gen.generate_single_response(user_input if len(dialogue) == 0 else dialogue[-1]['content'])
+            dialogue.append(response)
+            print(f"\n{response['speaker']}:\n{response['content']}")
+            
         all_dialogues.append({"topic": topic, "dialogue": dialogue})
 
-        print("\nGenerated Dialogue:")
+        print("\nFull Generated Dialogue:")
         print(f"Topic: {topic}")
         print(format_dialogue(dialogue))
 

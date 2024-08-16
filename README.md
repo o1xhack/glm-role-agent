@@ -109,4 +109,4 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the terms of the AGPL-3.0 license. For details, see the [LICENSE](LICENSE) file.

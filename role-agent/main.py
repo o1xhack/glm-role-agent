@@ -1,6 +1,6 @@
 from character_generator import generate_character
 from dialogue_generator import DialogueGenerator
-from data_saver import save_dialogue
+from data_saver import save_dialogue, format_dialogue
 
 def main():
     print("Generating characters...")
@@ -40,8 +40,7 @@ def main():
         all_dialogue.extend(dialogue)
 
         print("\nGenerated Dialogue:")
-        for line in dialogue:
-            print(line)
+        print(format_dialogue(dialogue))
 
     if all_dialogue:
         print("\nSaving dialogue...")

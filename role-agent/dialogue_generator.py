@@ -14,14 +14,22 @@ class DialogueGenerator:
                 messages = [
                     {"role": "system", "content": character['prompt']},
                     *self.messages,
-                    {"role": "user", "content": user_input if i == 0 else dialogue[-1]}
+                    {"role": "user", "content": user_input if i == 0 else dialogue[-1]['content']}
                 ]
                 response = model_interaction.generate_response(messages)
                 if response:
-                    dialogue.append(f"{character['Name']}: {response}")
+                    dialogue_entry = {
+                        "speaker": character['Name'],
+                        "content": response
+                    }
+                    dialogue.append(dialogue_entry)
                     self.messages.append({"role": "assistant", "content": response})
                 else:
-                    dialogue.append(f"{character['Name']}: [No response generated]")
+                    dialogue_entry = {
+                        "speaker": character['Name'],
+                        "content": "[No response generated]"
+                    }
+                    dialogue.append(dialogue_entry)
                 self.current_character = (self.current_character + 1) % 2
         return dialogue
 

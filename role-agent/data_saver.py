@@ -1,13 +1,13 @@
 import json
 from datetime import datetime
 
-def save_dialogue(characters, dialogue, filename=None):
+def save_dialogue(characters, dialogues, filename=None):
     if filename is None:
         filename = f"dialogue_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
     
     data = {
         "characters": characters,
-        "dialogue": dialogue
+        "dialogues": dialogues
     }
     
     with open(filename, 'w', encoding='utf-8') as f:

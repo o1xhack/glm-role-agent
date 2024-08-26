@@ -1,5 +1,28 @@
-venv
-.venv
-.idea
-*.DS_Store
-/role-agent/__pycache__
+# Python files
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+venv/
+env/
+
+# Node.js frontend
+frontend/node_modules/
+frontend/build/
+frontend/.env
+
+# VSCode settings
+.vscode/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.swp
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Coverage files
+htmlcov/
+.coverage

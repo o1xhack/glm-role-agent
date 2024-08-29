@@ -3,6 +3,20 @@ from character_generator import generate_character
 from dialogue_generator import DialogueGenerator
 from data_saver import save_dialogue, format_dialogue
 
+text1 = """
+Donald Trump, the 45th President of the United States. Known for his background in real estate and reality TV, 
+he entered politics and won the 2016 presidential election. His presidency was marked by controversial policies, 
+active use of social media, and a distinctive communication style. He's known for his "America First" agenda, 
+strong stance on immigration, and unconventional approach to international relations.
+"""
+
+text2 = """
+Joe Biden, the 46th and current President of the United States. With a long career in politics, including serving 
+as a Senator and as Vice President under Barack Obama, he won the 2020 presidential election. Known for his 
+experience in foreign policy, emphasis on unity and bipartisanship, and more traditional political approach. 
+He's focused on issues like climate change, healthcare reform, and rebuilding international alliances.
+"""
+
 def main():
     parser = argparse.ArgumentParser(description="Generate character dialogues")
     parser.add_argument("--lan", choices=["en", "zh"], default="en", help="Language for generation (en: English, zh: Chinese)")
@@ -11,20 +25,6 @@ def main():
     language = args.lan
 
     print("Generating characters...")
-    
-    text1 = """
-    Donald Trump, the 45th President of the United States. Known for his background in real estate and reality TV, 
-    he entered politics and won the 2016 presidential election. His presidency was marked by controversial policies, 
-    active use of social media, and a distinctive communication style. He's known for his "America First" agenda, 
-    strong stance on immigration, and unconventional approach to international relations.
-    """
-    
-    text2 = """
-    Joe Biden, the 46th and current President of the United States. With a long career in politics, including serving 
-    as a Senator and as Vice President under Barack Obama, he won the 2020 presidential election. Known for his 
-    experience in foreign policy, emphasis on unity and bipartisanship, and more traditional political approach. 
-    He's focused on issues like climate change, healthcare reform, and rebuilding international alliances.
-    """
 
     character1 = generate_character(text1, language)
     character2 = generate_character(text2, language)
